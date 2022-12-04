@@ -127,6 +127,7 @@
     452	common	hide_user_process	sys_hide_user_process
     
 内核编译
+
     make mrproper
     cp /boot/config-6.0.7-301.fc37.x86_64 .config
     make menuconfig
