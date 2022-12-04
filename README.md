@@ -46,7 +46,7 @@
 		    }	
         }while( ( p = next_task(p) ) && ( p != &init_task ) );
 	
-	    if( current->uid != 0 || me == NULL ) //判断是否为root用户或者pid是否有效
+	    if( current->cred->uid.val != 0 || me == NULL ) //判断是否为root用户或者pid是否有效
 		    return 0;
 	
 	    if( on == 1 )
