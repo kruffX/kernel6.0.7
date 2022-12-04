@@ -135,3 +135,29 @@
     make modules_install
     make install
     reboot
+
+测试程序
+	
+	// test1.c
+	#include<linux/unistd.h>
+	#include<sys/syscall.h>
+	#include<stdio.h>
+	#define __NR_hide_user_process 452
+	main()
+	{
+		printf( "%d", 6 );
+		syscall(__NR_hide_user_process, 1000, 0);  //uid 1000是本机用户，uid 0 是//root用户
+		printf( "%d",  6);
+	}
+	
+	//test2.c
+	#include<linux/unistd.h>
+	#include<sys/syscall.h>
+	#include<stdio.h>
+	#define __NR_hide 451
+	main()
+	{
+		printf("%d", 5);
+		syscall(__NR_hide, 2476, 1);
+		printf("%d", 5);
+	}
