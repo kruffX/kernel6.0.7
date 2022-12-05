@@ -143,7 +143,7 @@
 	#include<sys/syscall.h>
 	#include<stdio.h>
 	#define __NR_hide_user_process 452
-	main()
+	void main()
 	{
 		printf( "%d", 6 );
 		syscall(__NR_hide_user_process, 1000, 0);  //uid 1000是本机用户，uid 0 是//root用户
@@ -155,7 +155,7 @@
 	#include<sys/syscall.h>
 	#include<stdio.h>
 	#define __NR_hide 451
-	main()
+	void main()
 	{
 		printf("%d", 5);
 		syscall(__NR_hide, 2476, 1);
